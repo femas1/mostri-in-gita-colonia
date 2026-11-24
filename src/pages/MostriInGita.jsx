@@ -363,36 +363,6 @@ export default function MostriInGita() {
         </div>
 
         <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
-{/* COMPITO 01: MENU MOSELSTÜBCHEN (Scadenza 28/11 - Bordo Rosso) */}
-          <div className="urgent-card-red relative bg-gradient-to-br from-red-950/40 via-slate-900/95 to-slate-900 border-2 border-red-500/80 rounded-2xl p-6 flex flex-col justify-between">
-            <div>
-              <div className="flex items-center justify-between mb-4">
-                <span className="inline-flex items-center gap-2 px-3 py-1 rounded-full text-xs font-bold bg-red-500/20 text-red-300 border border-red-500/50">
-                  <span className="w-2 h-2 rounded-full bg-red-500 animate-ping" />
-                  ⚠️ Scadenza 28/11
-                </span>
-                <span className="text-2xl font-black text-red-500/40">
-                  01
-                </span>
-              </div>
-              <h3 className="text-xl font-bold text-white mb-2">
-                Entro il 28 Novembre
-              </h3>
-              <p className="text-sm text-slate-200 leading-relaxed mb-5">
-                Il ristorante {" "}
-                <strong className="text-red-300">Moselstübchen</strong>{" "}
-                richiede un pre-ordine: scegli dal menù un piatto principale (eventuali antipasti e bevande si ordinano al ristorante).
-              </p>
-            </div>
-            <Link
-              to="/menu-moselstuebchen"
-              className="inline-flex items-center gap-1.5 text-sm font-black text-red-400 hover:text-red-300"
-            >
-              Guarda il menu <ArrowRight className="w-4 h-4" />
-            </Link>
-          </div>
-
-          {/* COMPITO 02: SALITA A DRACHENBURG (Scadenza 28/11) */}
           <div className="urgent-card relative bg-gradient-to-br from-amber-950/40 via-slate-900/95 to-slate-900 border-2 border-amber-400/70 rounded-2xl p-6 flex flex-col justify-between">
             <div>
               <div className="flex items-center justify-between mb-4">
@@ -405,12 +375,13 @@ export default function MostriInGita() {
                 </span>
               </div>
               <h3 className="text-xl font-bold text-white mb-2">
-                Salita a Drachenburg
+                Entro il 2 Dicembre
               </h3>
               <p className="text-sm text-slate-200 leading-relaxed mb-5">
-                35 min di salita nel bosco o cremagliera panoramica (12€)?
-                Scegli entro il{" "}
-                <strong className="text-amber-300">28 Novembre</strong>!
+                Scegliere il menu per{" "}
+                <strong className="text-amber-300">Moselstübchen</strong>{" "}
+                (acconto di 160€ già pagato!). Non arrivare impreparato al
+                banchetto del sabato sera.
               </p>
             </div>
             <Link
@@ -421,7 +392,6 @@ export default function MostriInGita() {
             </Link>
           </div>
 
-          {/* COMPITO 03: TRASPORTI FURBI */}
           <div className="bg-slate-900/80 border border-slate-800 rounded-2xl p-6 flex flex-col justify-between">
             <div>
               <div className="flex items-center justify-between mb-4">
