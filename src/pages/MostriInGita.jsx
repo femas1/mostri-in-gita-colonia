@@ -381,7 +381,7 @@ export default function MostriInGita() {
               <p className="text-sm text-slate-200 leading-relaxed mb-5">
                 Il ristorante {" "}
                 <strong className="text-red-300">Moselstübchen</strong>{" "}
-                richiede un pre-ordine: Scegli dal menù un piatto principale (eventuali antipasti e bevande si ordinano al ristorante).
+                richiede un pre-ordine: scegli dal menù un piatto principale (eventuali antipasti e bevande si ordinano al ristorante).
               </p>
             </div>
             <Link
@@ -392,7 +392,7 @@ export default function MostriInGita() {
             </Link>
           </div>
 
-          {/* COMPITO 02: SFIDA DRACHENBURG (Scadenza 28/11) */}
+          {/* COMPITO 02: SALITA A DRACHENBURG (Scadenza 28/11) */}
           <div className="urgent-card relative bg-gradient-to-br from-amber-950/40 via-slate-900/95 to-slate-900 border-2 border-amber-400/70 rounded-2xl p-6 flex flex-col justify-between">
             <div>
               <div className="flex items-center justify-between mb-4">
@@ -405,11 +405,11 @@ export default function MostriInGita() {
                 </span>
               </div>
               <h3 className="text-xl font-bold text-white mb-2">
-                Sfida Drachenburg
+                Salita a Drachenburg
               </h3>
               <p className="text-sm text-slate-200 leading-relaxed mb-5">
                 35 min di salita nel bosco o cremagliera panoramica (12€)?
-                Scegli da che parte stai entro il{" "}
+                Scegli entro il{" "}
                 <strong className="text-amber-300">28 Novembre</strong>!
               </p>
             </div>
@@ -421,7 +421,7 @@ export default function MostriInGita() {
             </Link>
           </div>
 
-          {/* COMPITO 03: BIGLIETTI FURBI */}
+          {/* COMPITO 03: TRASPORTI FURBI */}
           <div className="bg-slate-900/80 border border-slate-800 rounded-2xl p-6 flex flex-col justify-between">
             <div>
               <div className="flex items-center justify-between mb-4">
@@ -431,11 +431,11 @@ export default function MostriInGita() {
                 <span className="text-2xl font-black text-slate-700">03</span>
               </div>
               <h3 className="text-xl font-bold text-white mb-2">
-                Biglietti Furbi
+                Trasporti furbi
               </h3>
               <p className="text-sm text-slate-300 leading-relaxed mb-5">
-                Gruppi da 5 con <strong>KVB 24h (19,20€)</strong> in città e{" "}
-                <strong>NRW 24h (59,80€)</strong> per DUS e Drachenburg. Meno
+                Gruppi da 5 con <strong>KVB 24h</strong> in città e{" "}
+                <strong>NRW 24h </strong> per DUS. Meno
                 spesa, più Glühwein!
               </p>
             </div>
@@ -531,97 +531,6 @@ export default function MostriInGita() {
         </div>
       </section>
 
-      {/* =========================================================
-          SEZIONE 5: MINI-QUIZ INTERATTIVO
-         ========================================================= */}
-      <section className="max-w-3xl mx-auto px-6 py-16">
-        <div className="bg-slate-900/90 border border-slate-800 rounded-3xl p-6 sm:p-10 shadow-xl">
-          <div className="text-center mb-6">
-            <span className="px-3 py-1 rounded-full text-xs font-bold uppercase tracking-wider bg-amber-400/10 text-amber-300 border border-amber-400/30">
-              Test rapido • 3 domande
-            </span>
-            <h2 className="text-2xl sm:text-3xl font-black text-white mt-3">
-              Che Mostro Sei in Gita? 👾🔮
-            </h2>
-          </div>
-
-          {quizStep < quizQuestions.length ? (
-            <div>
-              <div className="flex justify-between text-xs text-slate-400 mb-2">
-                <span>
-                  Domanda {quizStep + 1} di {quizQuestions.length}
-                </span>
-                <span>
-                  {Math.round(((quizStep + 1) / quizQuestions.length) * 100)}%
-                </span>
-              </div>
-              <div className="w-full h-2 bg-slate-800 rounded-full overflow-hidden mb-6">
-                <div
-                  className="h-full bg-amber-400 transition-all duration-300"
-                  style={{
-                    width: `${((quizStep + 1) / quizQuestions.length) * 100}%`,
-                  }}
-                />
-              </div>
-
-              <h3 className="text-lg sm:text-xl font-bold text-white mb-4">
-                {quizQuestions[quizStep].q}
-              </h3>
-
-              <div className="grid grid-cols-1 sm:grid-cols-2 gap-3">
-                {quizQuestions[quizStep].options.map((opt) => (
-                  <button
-                    key={opt.label}
-                    onClick={() => handleAnswer(opt.type)}
-                    className="text-left p-4 rounded-xl bg-slate-950/70 hover:bg-emerald-950/70 border border-slate-800 hover:border-emerald-500/50 text-sm font-medium text-slate-200 transition-all cursor-pointer"
-                  >
-                    {opt.label}
-                  </button>
-                ))}
-              </div>
-            </div>
-          ) : (
-            (() => {
-              const res = getWinner();
-              return (
-                <div className="text-center py-4">
-                  <div className="text-6xl mb-3">{res.emoji}</div>
-                  <div className="text-xs font-bold uppercase tracking-widest text-amber-400">
-                    Il tuo profilo ufficiale
-                  </div>
-                  <h3 className="text-2xl sm:text-3xl font-black text-white mt-1 mb-3">
-                    {res.title}
-                  </h3>
-                  <p className="text-slate-300 max-w-md mx-auto text-sm sm:text-base mb-6">
-                    {res.desc}
-                  </p>
-                  <div className="flex flex-wrap justify-center gap-3">
-                    <button
-                      onClick={() => shareResult(res)}
-                      className="inline-flex items-center gap-2 bg-amber-400 hover:bg-amber-300 text-slate-950 font-bold px-5 py-2.5 rounded-xl text-sm cursor-pointer"
-                    >
-                      {copied ? (
-                        <CheckCircle2 className="w-4 h-4" />
-                      ) : (
-                        <Share2 className="w-4 h-4" />
-                      )}
-                      {copied
-                        ? "Copiato negli appunti!"
-                        : "Condividi nel gruppo"}
-                    </button>
-                    <button
-                      onClick={resetQuiz}
-                      className="inline-flex items-center gap-2 bg-slate-800 hover:bg-slate-700 text-white font-semibold px-5 py-2.5 rounded-xl text-sm cursor-pointer"
-                    >
-                      <RotateCcw className="w-4 h-4" /> Rifai il test
-                    </button>
-                  </div>
-                </div>
-              );
-            })()
-          )}
-        </div>
-      </section>
 
       {/* Footer minimal con link alle 4 pagine */}
       <footer className="border-t border-slate-800/80 py-8 px-6 text-center text-xs text-slate-500">
