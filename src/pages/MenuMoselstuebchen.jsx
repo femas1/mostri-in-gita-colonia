@@ -1,6 +1,6 @@
 import { useState } from 'react';
 import { Link } from 'react-router-dom';
-import { ArrowLeft, AlertTriangle, Search, MapPin, Phone } from 'lucide-react';
+import { ArrowLeft, AlertTriangle, Search, MapPin, Phone, MessageCircle } from 'lucide-react';
 
 const foodCategories = [
   {
@@ -145,7 +145,7 @@ export default function MenuMoselstuebchen() {
     <div>
       <div style={{ marginBottom: '1rem' }}>
         <Link to="/" className="btn-link">
-          <ArrowLeft size={16} /> Torna alla Home (Mostri in Gita)
+          <ArrowLeft size={16} /> Torna alla home (Mostri in gita)
         </Link>
       </div>
 
@@ -172,11 +172,57 @@ export default function MenuMoselstuebchen() {
         }}
       >
         <div style={{ fontWeight: 700, color: '#92400e', display: 'flex', alignItems: 'center', gap: '0.4rem' }}>
-          <AlertTriangle size={18} /> Scadenza scelta piatti: entro il 2 Dicembre
+          <AlertTriangle size={18} /> Scadenza scelta piatti: entro il 28 Novembre
         </div>
         <div style={{ fontSize: '0.9rem', color: '#78350f', marginTop: '0.25rem' }}>
-          Prenotazione confermata per le <strong>19:30</strong> • Quasi tutti i piatti classici sono disponibili anche in versione <strong>vegana</strong> senza sovrapprezzo.
+          Prenotazione confermata per il <strong>5/12 alle 19:30</strong> • Quasi tutti i piatti classici sono disponibili anche in versione <strong>vegana</strong> senza sovrapprezzo.
         </div>
+      </div>
+      {/* Box Conferma Scelta via WhatsApp */}
+      <div
+        className="card"
+        style={{
+          marginTop: '1.5rem',
+           marginBottom: '1.5rem',
+          borderColor: '#10b981',
+          backgroundColor: '#ecfdf5',
+          display: 'flex',
+          flexWrap: 'wrap',
+          justifyContent: 'space-between',
+          alignItems: 'center',
+          gap: '1rem',
+        }}
+      >
+        <div>
+          <div style={{ fontWeight: 800, fontSize: '1.08rem', color: '#065f46' }}>
+            Hai scelto? 🍽️
+          </div>
+          <div style={{ fontSize: '0.92rem', color: '#047857', marginTop: '0.2rem' }}>
+            Comunica la tua scelta entro il <strong>28 Novembre</strong> così inviamo l&apos;ordine al ristorante!
+          </div>
+        </div>
+
+        <a
+          href="https://wa.me/4915251539299?text=Ciao!%20Ecco%20la%20mia%20scelta%20per%20Moselst%C3%BCbchen%3A%20"
+          target="_blank"
+          rel="noreferrer"
+          style={{
+            backgroundColor: '#25D366',
+            color: '#ffffff',
+            padding: '0.7rem 1.2rem',
+            borderRadius: '10px',
+            textDecoration: 'none',
+            fontWeight: 700,
+            fontSize: '0.92rem',
+            display: 'inline-flex',
+            alignItems: 'center',
+            gap: '0.5rem',
+            boxShadow: '0 4px 12px rgba(37, 211, 102, 0.25)',
+          }}
+        >
+          <MessageCircle size={18} />
+          Comunica su WhatsApp
+        </a>
       </div>
 
       {/* Barra di ricerca e filtri */}
@@ -311,6 +357,52 @@ export default function MenuMoselstuebchen() {
             </div>
           ))}
         </div>
+      </div>
+      {/* Box Conferma Scelta via WhatsApp */}
+      <div
+        className="card"
+        style={{
+          marginTop: '1.5rem',
+          marginBottom: '1.5rem',
+          borderColor: '#10b981',
+          backgroundColor: '#ecfdf5',
+          display: 'flex',
+          flexWrap: 'wrap',
+          justifyContent: 'space-between',
+          alignItems: 'center',
+          gap: '1rem',
+        }}
+      >
+        <div>
+          <div style={{ fontWeight: 800, fontSize: '1.08rem', color: '#065f46' }}>
+            Hai scelto? 🍽️
+          </div>
+          <div style={{ fontSize: '0.92rem', color: '#047857', marginTop: '0.2rem' }}>
+            Comunica la tua scelta entro il <strong>28 Novembre</strong> così inviamo l&apos;ordine al ristorante!
+          </div>
+        </div>
+
+        <a
+          href="https://wa.me/4915251539299?text=Ciao!%20Ecco%20la%20mia%20scelta%20per%20Moselst%C3%BCbchen%3A%20"
+          target="_blank"
+          rel="noreferrer"
+          style={{
+            backgroundColor: '#25D366',
+            color: '#ffffff',
+            padding: '0.7rem 1.2rem',
+            borderRadius: '10px',
+            textDecoration: 'none',
+            fontWeight: 700,
+            fontSize: '0.92rem',
+            display: 'inline-flex',
+            alignItems: 'center',
+            gap: '0.5rem',
+            boxShadow: '0 4px 12px rgba(37, 211, 102, 0.25)',
+          }}
+        >
+          <MessageCircle size={18} />
+          Comunica su WhatsApp
+        </a>
       </div>
     </div>
   );

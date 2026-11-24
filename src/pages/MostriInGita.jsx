@@ -24,7 +24,13 @@ const curiosities = [
     cat: "Goliardia & Misteri",
     emoji: "🍑",
     title: 'Il "Kallendresser" vicino a Heumarkt',
-    text: "Tra Alter Markt e Heumarkt, sporgente da una grondaia, c’è una statuetta in bronzo che fa i suoi bisogni verso l’edificio del consiglio comunale: il modo ironico con cui i cittadini protestavano contro le tasse.",
+    text: "Tra Alter Markt e Heumarkt, sporgente da una grondaia, c’è una statuetta in bronzo impegnata a fare i suoi bisogni. Secondo la tradizione più nota mostra il sedere al consiglio comunale per protestare contro le tasse; un’altra leggenda racconta invece che il proprietario di casa si stesse vendicando così del vicino del piano di sotto che lo disturbava suonando la tromba!",
+  },
+  {
+    cat: "Storia & Natura",
+    emoji: "🏎️",
+    title: "Michael Schumacher & la sua collezione privata",
+    text: "Nato alle porte di Colonia (a Hürth-Hermülheim) e cresciuto sulla pista di kart di Kerpen, Michael Schumacher ha qui la sua esposizione ufficiale: al Motorworld Köln-Rheinland è custodita la sua collezione privata con monoposto di Formula 1 (tra cui le Ferrari iridate), trofei, caschi e tute originali. Visitabile gratuitamente.",
   },
   {
     cat: "Goliardia & Misteri",
@@ -104,9 +110,9 @@ const quizQuestions = [
   {
     q: "Qual è la tua vera missione a Colonia?",
     options: [
-      { label: "🎄 Mercatini & Vin Brulé a oltranza", type: "elfo" },
-      { label: "🏰 Castello & Cremagliera panoramica", type: "esploratore" },
-      { label: "🍺 Schnitzel & Birrificio Sünner", type: "gourmet" },
+      { label: "🎄 Mercatini e Glühwein a oltranza", type: "elfo" },
+      { label: "🏰 Castello e cremagliera panoramica", type: "esploratore" },
+      { label: "🍺 Schnitzel e birrificio Sünner", type: "gourmet" },
       { label: "🦊 Red Fox Bar fino a tardi", type: "nottambulo" },
     ],
   },
@@ -114,8 +120,8 @@ const quizQuestions = [
     q: "Come arrivi a destinazione?",
     options: [
       { label: "🌅 All’alba su CGN per aprire le danze", type: "esploratore" },
-      { label: "👥 In gruppo compatto con biglietto KVB da 5", type: "elfo" },
-      { label: "🚆 In treno comodamente fino a Köln Hbf", type: "gourmet" },
+      { label: "👥 In gruppo", type: "elfo" },
+      { label: "🚆 In treno comodamente fino alla stazione centrale", type: "gourmet" },
       { label: "🌙 In serata su DUS pronto per la festa", type: "nottambulo" },
     ],
   },
@@ -150,7 +156,7 @@ const quizResults = {
   gourmet: {
     emoji: "🥨",
     title: "Mostro Buongustaio",
-    desc: "Il tuo vero itinerario va da Sattgrün a Moselstübchen, passando per il brunch da The Ash e Sünner.",
+    desc: "Il tuo vero itinerario va dai mercatini a Moselstübchen, passando per il brunch da The Ash e Sünner.",
   },
   nottambulo: {
     emoji: "🦊",
@@ -262,8 +268,7 @@ export default function MostriInGita() {
       <section className="relative overflow-hidden border-b border-slate-800/80 bg-gradient-to-b from-emerald-950/60 via-slate-950 to-slate-950 px-6 py-20 text-center">
         <div className="max-w-4xl mx-auto">
           <div className="inline-flex items-center gap-2 px-4 py-1.5 rounded-full bg-amber-400/10 border border-amber-400/30 text-amber-300 text-xs font-bold uppercase tracking-widest mb-6">
-            <Sparkles className="w-4 h-4" />
-            Operazione Colonia • 04 – 08 Dicembre 2026
+            🇩🇪 Colonia • 04 - 08 Dicembre 2026 🇩🇪
           </div>
 
           <h1 className="text-5xl sm:text-7xl font-black tracking-tight text-white mb-10">
@@ -305,14 +310,7 @@ export default function MostriInGita() {
               className="inline-flex items-center gap-2 bg-amber-400 hover:bg-amber-300 text-slate-950 font-black px-6 py-3.5 rounded-xl transition-transform hover:scale-105 shadow-lg shadow-amber-400/20"
             >
               <Calendar className="w-5 h-5" />
-              Vedi Programma Orario
-            </Link>
-            <Link
-              to="/partecipanti"
-              className="inline-flex items-center gap-2 bg-slate-900 hover:bg-slate-800 border border-slate-700 text-white font-bold px-6 py-3.5 rounded-xl transition-colors"
-            >
-              <Users className="w-5 h-5 text-emerald-400" />
-              Voli &amp; Squadra
+              Vedi programma
             </Link>
           </div>
         </div>
@@ -323,19 +321,19 @@ export default function MostriInGita() {
          ========================================================= */}
       <section className="max-w-5xl mx-auto px-6 py-16 border-b border-slate-800/80">
         <div className="text-center mb-10">
-          <div className="text-xs font-bold uppercase tracking-widest text-amber-400 mb-2">
+          {/* <div className="text-xs font-bold uppercase tracking-widest text-amber-400 mb-2">
             I numeri della trasferta
-          </div>
+          </div> */}
           <h2 className="text-3xl sm:text-4xl font-black text-white">
-            L&apos;Identikit della Spedizione
+            I numeri della gita
           </h2>
         </div>
 
         <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-5">
           {[
-            { emoji: "👾", stat: "16 Mostri" },
-            { emoji: "🌙", stat: "4 Notti" },
-            { emoji: "🍖", stat: "3 Cene + 1 Brunch" },
+            { emoji: "👾", stat: "18 Mostri" },
+            { emoji: "🌙", stat: "3 Notti" },
+            { emoji: "🍖", stat: "2 Cene & 1 Brunch" },
             { emoji: "🏰", stat: "1 Castello" },
           ].map((card) => (
             <div
@@ -357,50 +355,80 @@ export default function MostriInGita() {
       <section className="max-w-5xl mx-auto px-6 py-16 border-b border-slate-800/80">
         <div className="text-center mb-10">
           <div className="text-xs font-bold uppercase tracking-widest text-emerald-400 mb-2">
-            Checklist di sopravvivenza
+            Checklist prima della partenza
           </div>
           <h2 className="text-3xl sm:text-4xl font-black text-white">
-            Le 3 Regole d&apos;Oro dei Mostri
+            Tre compiti per i mostri
           </h2>
         </div>
 
         <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
-          <div className="urgent-card relative bg-gradient-to-br from-amber-950/40 via-slate-900/95 to-slate-900 border-2 border-amber-400/70 rounded-2xl p-6 flex flex-col justify-between">
+{/* COMPITO 01: MENU MOSELSTÜBCHEN (Scadenza 28/11 - Bordo Rosso) */}
+          <div className="urgent-card-red relative bg-gradient-to-br from-red-950/40 via-slate-900/95 to-slate-900 border-2 border-red-500/80 rounded-2xl p-6 flex flex-col justify-between">
             <div>
               <div className="flex items-center justify-between mb-4">
-                <span className="inline-flex items-center gap-2 px-3 py-1 rounded-full text-xs font-bold bg-amber-400/20 text-amber-300 border border-amber-400/50">
-                  <span className="w-2 h-2 rounded-full bg-amber-400 animate-ping" />
-                  ⚠️ Scadenza 02/12
+                <span className="inline-flex items-center gap-2 px-3 py-1 rounded-full text-xs font-bold bg-red-500/20 text-red-300 border border-red-500/50">
+                  <span className="w-2 h-2 rounded-full bg-red-500 animate-ping" />
+                  ⚠️ Scadenza 28/11
                 </span>
-                <span className="text-2xl font-black text-amber-400/40">
+                <span className="text-2xl font-black text-red-500/40">
                   01
                 </span>
               </div>
               <h3 className="text-xl font-bold text-white mb-2">
-                Entro il 2 Dicembre
+                Entro il 28 Novembre
               </h3>
               <p className="text-sm text-slate-200 leading-relaxed mb-5">
-                Scegliere il menu per{" "}
-                <strong className="text-amber-300">Moselstübchen</strong>{" "}
-                (acconto di 160€ già pagato!). Non arrivare impreparato al
-                banchetto del sabato sera.
+                Il ristorante {" "}
+                <strong className="text-red-300">Moselstübchen</strong>{" "}
+                richiede un pre-ordine: Scegli dal menù un piatto principale (eventuali antipasti e bevande si ordinano al ristorante).
               </p>
             </div>
             <Link
               to="/menu-moselstuebchen"
-              className="inline-flex items-center gap-1.5 text-sm font-black text-amber-400 hover:text-amber-300"
+              className="inline-flex items-center gap-1.5 text-sm font-black text-red-400 hover:text-red-300"
             >
               Guarda il menu <ArrowRight className="w-4 h-4" />
             </Link>
           </div>
 
+          {/* COMPITO 02: SFIDA DRACHENBURG (Scadenza 28/11) */}
+          <div className="urgent-card relative bg-gradient-to-br from-amber-950/40 via-slate-900/95 to-slate-900 border-2 border-amber-400/70 rounded-2xl p-6 flex flex-col justify-between">
+            <div>
+              <div className="flex items-center justify-between mb-4">
+                <span className="inline-flex items-center gap-2 px-3 py-1 rounded-full text-xs font-bold bg-amber-400/20 text-amber-300 border border-amber-400/50">
+                  <span className="w-2 h-2 rounded-full bg-amber-400 animate-ping" />
+                  ⚠️ Scadenza 28/11
+                </span>
+                <span className="text-2xl font-black text-amber-400/40">
+                  02
+                </span>
+              </div>
+              <h3 className="text-xl font-bold text-white mb-2">
+                Sfida Drachenburg
+              </h3>
+              <p className="text-sm text-slate-200 leading-relaxed mb-5">
+                35 min di salita nel bosco o cremagliera panoramica (12€)?
+                Scegli da che parte stai entro il{" "}
+                <strong className="text-amber-300">28 Novembre</strong>!
+              </p>
+            </div>
+            <Link
+              to="/programma"
+              className="inline-flex items-center gap-1.5 text-sm font-black text-amber-400 hover:text-amber-300"
+            >
+              Vedi dettagli tappa <ArrowRight className="w-4 h-4" />
+            </Link>
+          </div>
+
+          {/* COMPITO 03: BIGLIETTI FURBI */}
           <div className="bg-slate-900/80 border border-slate-800 rounded-2xl p-6 flex flex-col justify-between">
             <div>
               <div className="flex items-center justify-between mb-4">
                 <span className="px-3 py-1 rounded-full text-xs font-bold bg-emerald-400/15 text-emerald-300 border border-emerald-400/30">
                   🎫 Risparmio Gruppo
                 </span>
-                <span className="text-2xl font-black text-slate-700">02</span>
+                <span className="text-2xl font-black text-slate-700">03</span>
               </div>
               <h3 className="text-xl font-bold text-white mb-2">
                 Biglietti Furbi
@@ -418,30 +446,6 @@ export default function MostriInGita() {
               Confronta i trasporti <ArrowRight className="w-4 h-4" />
             </Link>
           </div>
-
-          <div className="bg-slate-900/80 border border-slate-800 rounded-2xl p-6 flex flex-col justify-between">
-            <div>
-              <div className="flex items-center justify-between mb-4">
-                <span className="px-3 py-1 rounded-full text-xs font-bold bg-sky-400/15 text-sky-300 border border-sky-400/30">
-                  🏰 Domenica 06/12
-                </span>
-                <span className="text-2xl font-black text-slate-700">03</span>
-              </div>
-              <h3 className="text-xl font-bold text-white mb-2">
-                Sfida Drachenburg
-              </h3>
-              <p className="text-sm text-slate-300 leading-relaxed mb-5">
-                35 min di salita nel bosco o cremagliera panoramica (12€)?
-                Scegli da che parte stai prima di domenica!
-              </p>
-            </div>
-            <Link
-              to="/programma"
-              className="inline-flex items-center gap-1.5 text-sm font-bold text-amber-400 hover:text-amber-300"
-            >
-              Vedi dettagli tappa <ArrowRight className="w-4 h-4" />
-            </Link>
-          </div>
         </div>
       </section>
 
@@ -450,11 +454,11 @@ export default function MostriInGita() {
          ========================================================= */}
       <section className="max-w-4xl mx-auto px-6 py-16 border-b border-slate-800/80">
         <div className="text-center mb-8">
-          <div className="text-xs font-bold uppercase tracking-widest text-amber-400 mb-2">
-            Lo sapevi che...? • 14 perle locali
+<div className="text-xs font-bold uppercase tracking-widest text-amber-400 mb-2">
+            Lo sapevi che...? {curiosities.length} perle locali
           </div>
           <h2 className="text-3xl sm:text-4xl font-black text-white">
-            Segreti &amp; Curiosità di Colonia 🧐
+            Segreti e curiosità di Colonia 🧐
           </h2>
         </div>
 
@@ -625,17 +629,11 @@ export default function MostriInGita() {
           <Link to="/programma" className="hover:text-amber-400">
             Programma
           </Link>
-          <Link to="/partecipanti" className="hover:text-amber-400">
-            Partecipanti
-          </Link>
           <Link to="/trasporti" className="hover:text-amber-400">
             Trasporti
           </Link>
-          <Link to="/ristoranti" className="hover:text-amber-400">
-            Ristoranti
-          </Link>
         </div>
-        <p>Mostri in Gita: Operazione Colonia • 04–08 Dicembre 2026</p>
+        <p>Mostri in Gita a Colonia 04-08 Dicembre 2026</p>
       </footer>
     </div>
   );

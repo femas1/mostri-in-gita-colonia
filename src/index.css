@@ -511,8 +511,35 @@ tr:nth-child(even) td {
   }
 }
 
-.urgent-card {
-  animation: urgentAlert 4s ease-in-out infinite;
+@keyframes urgentAlertRed {
+  0%, 75%, 100% {
+    transform: translateX(0) rotate(0deg);
+    box-shadow: 0 0 15px rgba(239, 68, 68, 0.3), inset 0 0 12px rgba(239, 68, 68, 0.1);
+  }
+  78% {
+    transform: translateX(-4px) rotate(-0.8deg);
+    box-shadow: 0 0 28px rgba(239, 68, 68, 0.7), inset 0 0 18px rgba(239, 68, 68, 0.25);
+  }
+  81% {
+    transform: translateX(4px) rotate(0.8deg);
+  }
+  84% {
+    transform: translateX(-3px) rotate(-0.5deg);
+  }
+  87% {
+    transform: translateX(3px) rotate(0.5deg);
+  }
+  90% {
+    transform: translateX(0) rotate(0deg);
+  }
+}
+
+.urgent-card-red {
+  animation: urgentAlertRed 4s ease-in-out infinite;
+}
+
+.urgent-card-red:hover {
+  animation-play-state: paused;
 }
 
 .urgent-card:hover {
