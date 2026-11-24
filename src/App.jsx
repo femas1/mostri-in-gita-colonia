@@ -2,9 +2,7 @@ import { BrowserRouter, Routes, Route, Navigate } from 'react-router-dom';
 import Navbar from './components/Navbar';
 import MostriInGita from './pages/MostriInGita';
 import ProgrammaOrario from './pages/ProgrammaOrario';
-import Partecipanti from './pages/Partecipanti';
 import Trasporti from './pages/Trasporti';
-import Ristoranti from './pages/Ristoranti';
 import MenuMoselstuebchen from './pages/MenuMoselstuebchen';
 
 function PageWithNavbar({ children }) {
@@ -30,27 +28,12 @@ export default function App() {
             </PageWithNavbar>
           }
         />
-        <Route
-          path="/partecipanti"
-          element={
-            <PageWithNavbar>
-              <Partecipanti />
-            </PageWithNavbar>
-          }
-        />
+       
         <Route
           path="/trasporti"
           element={
             <PageWithNavbar>
               <Trasporti />
-            </PageWithNavbar>
-          }
-        />
-        <Route
-          path="/ristoranti"
-          element={
-            <PageWithNavbar>
-              <Ristoranti />
             </PageWithNavbar>
           }
         />

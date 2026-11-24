@@ -31,29 +31,29 @@ export const budgetItems = [
 export const transports = [
   {
     name: 'KVB 24h Gruppo',
-    coverage: '24 ore — Rete urbana Colonia (incl. aeroporto CGN)',
+    coverage: '24 ore - Rete urbana Colonia (incl. aeroporto di Colonia e Castello di Drachenburg)',
     totalPrice: 19.20,
     people: 5,
     children: 'Gratis',
-    note: 'Ideale per gruppi da 3-5 persone che si muovono insieme in città o da/per CGN.',
+    note: 'Utilizzabile per gruppi fino a 5 persone che si muovono insieme.',
     url: 'https://kvb-direct.ride-ticketing.de/direct/'
   },
   {
     name: 'NRW 24h-Ticket Gruppo',
-    coverage: '24 ore — Tutto il Nord Reno-Westfalia (incl. DUS e Königswinter)',
+    coverage: '24 ore - Tutto il Nord Reno-Westfalia (NRW)  ',
     totalPrice: 59.80,
     people: 5,
-    children: 'Verificare condizioni',
-    note: 'Conviene se 5 persone fanno DUS-Köln (5 x 13,90€ = 69,50€) o per l’escursione a Drachenburg.',
+    children: '-',
+    note: 'Utilizzabile per gruppi fino a 5 persone fra DUS e Köln.',
     url: 'https://www.bahn.de/angebot/regio/laender-tickets/24h-ticket-nrw-5-pers?dbkanal_007=teaserBlock_4-4_link_24hTicketNRW5Personen%7Eregionen_nrw_tickets_verbundtickets'
   },
   {
     name: 'Corsa Singola DUS ↔ Köln',
-    coverage: 'Tratta singola individuale aeroporto Düsseldorf - Colonia',
+    coverage: 'Tratta singola individuale DUS-Köln / Köln-DUS',
     totalPrice: 13.90,
     people: 1,
-    children: 'Tariffa ridotta',
-    note: 'Conviene solo per 1-2 persone che viaggiano da sole (es. Giorgio e Sofija il 07/12 mattina).',
+    children: '-',
+    note: 'Per persone che non rientrano nel bigietto di gruppo da 5 (sera del 4.12 da DUS a Köln) o per chi viaggia fra DUS e Köln in meno di 5 (il 7.12 Giorgio e Sofija).',
     url: ''
   }
 ];
@@ -72,5 +72,5 @@ export const restaurants = [
 export const linksEscursioni = [
   { label: 'Biglietti Castello Drachenburg (10€)', url: 'https://schloss-drachenburg.shop.koronaevent.de/de/admissions/AD1/price' },
   { label: 'Biglietti Cremagliera Drachenfelsbahn (12€)', url: 'https://www.drachenfelsbahn.de/tickets#!/o/ee332234b069c14c3ce1af073c847ba5/cw/f861741971a5b0b28910635c64ca34bb' },
-  { label: 'Menu Moselstübchen (scegliere entro 02/12)', url: 'https://moselstuebchen-koeln.de/speisekarte' },
+  { label: 'Menu Moselstübchen (scegliere entro 02/12)', url: '/menu-moselstuebchen' },
 ];
