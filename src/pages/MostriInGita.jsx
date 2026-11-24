@@ -2,11 +2,6 @@ import { useState, useEffect } from "react";
 import { Link } from "react-router-dom";
 import {
   Calendar,
-  Users,
-  Sparkles,
-  CheckCircle2,
-  Share2,
-  RotateCcw,
   ArrowRight,
   ChevronLeft,
   ChevronRight,
@@ -62,9 +57,9 @@ const curiosities = [
     title: "Gli Heinzelmännchen",
     text: "La celeberrima poesia sui folletti (Heinzelmännchen) che di notte lavoravano al posto degli artigiani di Colonia fu scritta nel 1836 da August Kopisch di Breslavia — che con ogni probabilità non aveva mai nemmeno visitato la città.",
   },
-{
-    cat: 'Storia & Natura',
-    emoji: '🧴',
+  {
+    cat: "Storia & Natura",
+    emoji: "🧴",
     title: 'Perché si dice "Acqua di Colonia"?',
     text: 'Nel 1709 l’italiano Giovanni Maria Farina fondò proprio qui la fabbrica di profumi più antica al mondo e battezzò la sua fragranza "Eau de Cologne" in onore della sua nuova città: è da quel profumo — di cui Napoleone consumava flaconi interi ogni settimana — che deriva il nome italiano "Acqua di Colonia".',
   },
@@ -80,11 +75,11 @@ const curiosities = [
     title: "632 anni di lavori (e non finirà mai)",
     text: 'La costruzione del Duomo è durata 632 anni (dal 1248 al 1880), ma le impalcature non spariscono mai: per via dei continui restauri, a Colonia si dice che "quando il Duomo sarà finito, finirà il mondo".',
   },
-{
-    cat: 'Duomo',
-    emoji: '🖤',
-    title: 'Il Duomo sarebbe chiaro (ma non viene pulito)',
-    text: 'Il Duomo di Colonia è costruito con pietre chiare annerite nei secoli da smog e fuliggine. Non viene ripulito per tre motivi: pulirlo rovinerebbe la pietra porosa e la sua patina protettiva, costerebbe decine di milioni di euro e — essendo stato costruito in 632 anni con oltre 50 tipi di pietra provenienti da cave diverse — una volta pulito non avrebbe un colore uniforme.',
+  {
+    cat: "Duomo",
+    emoji: "🖤",
+    title: "Il Duomo sarebbe chiaro (ma non viene pulito)",
+    text: "Il Duomo di Colonia è costruito con pietre chiare annerite nei secoli da smog e fuliggine. Non viene ripulito per tre motivi: pulirlo rovinerebbe la pietra porosa e la sua patina protettiva, costerebbe decine di milioni di euro e — essendo stato costruito in 632 anni con oltre 50 tipi di pietra provenienti da cave diverse — una volta pulito non avrebbe un colore uniforme.",
   },
   {
     cat: "Duomo",
@@ -101,69 +96,10 @@ const curiosities = [
   {
     cat: "Duomo",
     emoji: "🔔",
-    title: 'Una campana da 24 tonnellate',
+    title: "Una campana da 24 tonnellate",
     text: 'La Campana del Duomo ("Petersglocke"), fusa nel 1923 ad Apolda in Turingia, pesa circa 24 tonnellate ed è la campana oscillante più grande del mondo.',
   },
 ];
-
-const quizQuestions = [
-  {
-    q: "Qual è la tua vera missione a Colonia?",
-    options: [
-      { label: "🎄 Mercatini e Glühwein a oltranza", type: "elfo" },
-      { label: "🏰 Castello e cremagliera panoramica", type: "esploratore" },
-      { label: "🍺 Schnitzel e birrificio Sünner", type: "gourmet" },
-      { label: "🦊 Red Fox Bar fino a tardi", type: "nottambulo" },
-    ],
-  },
-  {
-    q: "Come arrivi a destinazione?",
-    options: [
-      { label: "🌅 All’alba su CGN per aprire le danze", type: "esploratore" },
-      { label: "👥 In gruppo", type: "elfo" },
-      { label: "🚆 In treno comodamente fino alla stazione centrale", type: "gourmet" },
-      { label: "🌙 In serata su DUS pronto per la festa", type: "nottambulo" },
-    ],
-  },
-  {
-    q: "Salita al Castello di Drachenburg: come la affronti?",
-    options: [
-      {
-        label: "🥾 35 minuti a piedi nel bosco senza paura",
-        type: "esploratore",
-      },
-      { label: "🚞 Cremagliera panoramica tutta la vita", type: "gourmet" },
-      { label: "📸 Mi fermo ogni 2 minuti a fare foto", type: "elfo" },
-      {
-        label: "☕ Penso già al caffè e dolce a casa dopo",
-        type: "nottambulo",
-      },
-    ],
-  },
-];
-
-const quizResults = {
-  elfo: {
-    emoji: "🎅",
-    title: "Mostro dei Mercatini",
-    desc: "Hai già scelto la tazza di Glühwein da collezionare e conosci a memoria le bancarelle del centro.",
-  },
-  esploratore: {
-    emoji: "🏔️",
-    title: "Mostro Scalatore",
-    desc: "533 gradini del Duomo + salita a piedi a Drachenburg? Per te è solo il riscaldamento.",
-  },
-  gourmet: {
-    emoji: "🥨",
-    title: "Mostro Buongustaio",
-    desc: "Il tuo vero itinerario va dai mercatini a Moselstübchen, passando per il brunch da The Ash e Sünner.",
-  },
-  nottambulo: {
-    emoji: "🦊",
-    title: "Mostro di Ehrenfeld",
-    desc: "Vivi per il dopocena al Red Fox Bar e sei l’ultimo a spegnere la luce in casa.",
-  },
-};
 
 export default function MostriInGita() {
   const [timeLeft, setTimeLeft] = useState({
@@ -174,9 +110,6 @@ export default function MostriInGita() {
   });
   const [curiosityCat, setCuriosityCat] = useState("Tutte");
   const [curiosityIdx, setCuriosityIdx] = useState(0);
-  const [quizStep, setQuizStep] = useState(0);
-  const [answers, setAnswers] = useState([]);
-  const [copied, setCopied] = useState(false);
 
   useEffect(() => {
     const target = new Date("2026-12-04T09:35:00").getTime();
@@ -230,34 +163,6 @@ export default function MostriInGita() {
     let next = Math.floor(Math.random() * filteredCuriosities.length);
     if (next === safeIdx) next = (next + 1) % filteredCuriosities.length;
     setCuriosityIdx(next);
-  };
-
-  const handleAnswer = (type) => {
-    setAnswers([...answers, type]);
-    setQuizStep(quizStep + 1);
-  };
-
-  const resetQuiz = () => {
-    setAnswers([]);
-    setQuizStep(0);
-    setCopied(false);
-  };
-
-  const getWinner = () => {
-    const counts = answers.reduce(
-      (acc, t) => ({ ...acc, [t]: (acc[t] || 0) + 1 }),
-      {},
-    );
-    const best =
-      Object.keys(counts).sort((a, b) => counts[b] - counts[a])[0] || "elfo";
-    return quizResults[best];
-  };
-
-  const shareResult = (res) => {
-    const text = `👾 Test Mostri in Gita (Colonia 04-08 Dic): sono "${res.emoji} ${res.title}"!`;
-    navigator.clipboard?.writeText(text);
-    setCopied(true);
-    setTimeout(() => setCopied(false), 2500);
   };
 
   return (
@@ -321,9 +226,6 @@ export default function MostriInGita() {
          ========================================================= */}
       <section className="max-w-5xl mx-auto px-6 py-16 border-b border-slate-800/80">
         <div className="text-center mb-10">
-          {/* <div className="text-xs font-bold uppercase tracking-widest text-amber-400 mb-2">
-            I numeri della trasferta
-          </div> */}
           <h2 className="text-3xl sm:text-4xl font-black text-white">
             I numeri della gita
           </h2>
@@ -363,6 +265,37 @@ export default function MostriInGita() {
         </div>
 
         <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
+          {/* COMPITO 01: MENU MOSELSTÜBCHEN (Scadenza 28/11 - Bordo Rosso) */}
+          <div className="urgent-card-red relative bg-gradient-to-br from-red-950/40 via-slate-900/95 to-slate-900 border-2 border-red-500/80 rounded-2xl p-6 flex flex-col justify-between">
+            <div>
+              <div className="flex items-center justify-between mb-4">
+                <span className="inline-flex items-center gap-2 px-3 py-1 rounded-full text-xs font-bold bg-red-500/20 text-red-300 border border-red-500/50">
+                  <span className="w-2 h-2 rounded-full bg-red-500 animate-ping" />
+                  ⚠️ Scadenza 28/11
+                </span>
+                <span className="text-2xl font-black text-red-500/40">
+                  01
+                </span>
+              </div>
+              <h3 className="text-xl font-bold text-white mb-2">
+                Entro il 28 Novembre
+              </h3>
+              <p className="text-sm text-slate-200 leading-relaxed mb-5">
+                Il ristorante{" "}
+                <strong className="text-red-300">Moselstübchen</strong>{" "}
+                richiede un pre-ordine: Scegli dal menù un piatto principale
+                (eventuali antipasti e bevande si ordinano al ristorante).
+              </p>
+            </div>
+            <Link
+              to="/menu-moselstuebchen"
+              className="inline-flex items-center gap-1.5 text-sm font-black text-red-400 hover:text-red-300"
+            >
+              Guarda il menu <ArrowRight className="w-4 h-4" />
+            </Link>
+          </div>
+
+          {/* COMPITO 02: SFIDA DRACHENBURG (Scadenza 28/11) */}
           <div className="urgent-card relative bg-gradient-to-br from-amber-950/40 via-slate-900/95 to-slate-900 border-2 border-amber-400/70 rounded-2xl p-6 flex flex-col justify-between">
             <div>
               <div className="flex items-center justify-between mb-4">
@@ -375,13 +308,12 @@ export default function MostriInGita() {
                 </span>
               </div>
               <h3 className="text-xl font-bold text-white mb-2">
-                Entro il 2 Dicembre
+                Sfida Drachenburg
               </h3>
               <p className="text-sm text-slate-200 leading-relaxed mb-5">
-                Scegliere il menu per{" "}
-                <strong className="text-amber-300">Moselstübchen</strong>{" "}
-                (acconto di 160€ già pagato!). Non arrivare impreparato al
-                banchetto del sabato sera.
+                35 min di salita nel bosco o cremagliera panoramica (12€)?
+                Scegli da che parte stai entro il{" "}
+                <strong className="text-amber-300">28 Novembre</strong>!
               </p>
             </div>
             <Link
@@ -392,6 +324,7 @@ export default function MostriInGita() {
             </Link>
           </div>
 
+          {/* COMPITO 03: TRASPORTI FURBI */}
           <div className="bg-slate-900/80 border border-slate-800 rounded-2xl p-6 flex flex-col justify-between">
             <div>
               <div className="flex items-center justify-between mb-4">
@@ -405,8 +338,7 @@ export default function MostriInGita() {
               </h3>
               <p className="text-sm text-slate-300 leading-relaxed mb-5">
                 Gruppi da 5 con <strong>KVB 24h</strong> in città e{" "}
-                <strong>NRW 24h </strong> per DUS. Meno
-                spesa, più Glühwein!
+                <strong>NRW 24h</strong> per DUS. Meno spesa, più Glühwein!
               </p>
             </div>
             <Link
@@ -424,7 +356,7 @@ export default function MostriInGita() {
          ========================================================= */}
       <section className="max-w-4xl mx-auto px-6 py-16 border-b border-slate-800/80">
         <div className="text-center mb-8">
-<div className="text-xs font-bold uppercase tracking-widest text-amber-400 mb-2">
+          <div className="text-xs font-bold uppercase tracking-widest text-amber-400 mb-2">
             Lo sapevi che...? {curiosities.length} perle locali
           </div>
           <h2 className="text-3xl sm:text-4xl font-black text-white">
@@ -501,8 +433,7 @@ export default function MostriInGita() {
         </div>
       </section>
 
-
-      {/* Footer minimal con link alle 4 pagine */}
+      {/* Footer minimal */}
       <footer className="border-t border-slate-800/80 py-8 px-6 text-center text-xs text-slate-500">
         <div className="flex flex-wrap justify-center gap-5 mb-3 text-slate-400 font-medium">
           <Link to="/programma" className="hover:text-amber-400">
