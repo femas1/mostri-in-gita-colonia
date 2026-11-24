@@ -209,7 +209,7 @@ export default function MostriInGita() {
           </div>
 
           {/* Pulsanti di navigazione diretti */}
-          <div className="flex flex-wrap justify-center gap-4">
+          {/* <div className="flex flex-wrap justify-center gap-4">
             <Link
               to="/programma"
               className="inline-flex items-center gap-2 bg-amber-400 hover:bg-amber-300 text-slate-950 font-black px-6 py-3.5 rounded-xl transition-transform hover:scale-105 shadow-lg shadow-amber-400/20"
@@ -217,7 +217,7 @@ export default function MostriInGita() {
               <Calendar className="w-5 h-5" />
               Vedi programma
             </Link>
-          </div>
+          </div> */}
         </div>
       </section>
 
@@ -348,6 +348,15 @@ export default function MostriInGita() {
               Confronta i trasporti <ArrowRight className="w-4 h-4" />
             </Link>
           </div>
+        </div>
+        <div className="mt-10 text-center">
+          <Link
+            to="/programma"
+            className="inline-flex items-center gap-2 bg-amber-400 hover:bg-amber-300 text-slate-950 font-black px-7 py-3.5 rounded-xl transition-transform hover:scale-105 shadow-lg shadow-amber-400/20"
+          >
+            <Calendar className="w-5 h-5" />
+            Vedi programma completo
+          </Link>
         </div>
       </section>
 
