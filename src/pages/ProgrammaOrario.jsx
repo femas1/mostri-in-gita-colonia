@@ -164,7 +164,7 @@ const dailySchedule = [
         duration: 'Cena',
         cat: 'pasto',
         badge: '🍺 Prenotato',
-        title: 'Cena da Sünner (20€ - 30€)',
+        title: 'Cena da Sünner (25€ - 35€)',
         location: 'Kalk',
         details: 'Prenotazione confermata per le ore 20:00 nel birrificio più antico di Colonia.',
       },
