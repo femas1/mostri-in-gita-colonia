@@ -5,7 +5,7 @@ export default function Navbar() {
   return (
     <header className="navbar">
       <NavLink to="/" className="navbar-brand" style={{ color: '#fff', textDecoration: 'none' }}>
-        <span>👾 Mostri in Gita — Colonia</span>
+        <span>👹 Mostri in Gita — Colonia</span>
       </NavLink>
 
       <nav className="nav-links">
