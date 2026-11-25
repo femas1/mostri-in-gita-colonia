@@ -290,7 +290,7 @@ export default function MostriInGita() {
               <p className="text-sm text-slate-200 leading-relaxed mb-5">
                 Il ristorante{" "}
                 <strong className="text-red-300">Moselstübchen</strong>{" "}
-                richiede un pre-ordine: Scegli dal menù un piatto principale
+                richiede un pre-ordine: scegli dal menù un piatto principale
                 (eventuali antipasti e bevande si ordinano al ristorante).
               </p>
             </div>
@@ -315,16 +315,16 @@ export default function MostriInGita() {
                 </span>
               </div>
               <h3 className="text-xl font-bold text-white mb-2">
-                Sfida Drachenburg
+                Castello di Drachenburg
               </h3>
               <p className="text-sm text-slate-200 leading-relaxed mb-5">
                 35 min di salita nel bosco o cremagliera panoramica (12€)?
-                Scegli da che parte stai entro il{" "}
+                Decidi entro il{" "}
                 <strong className="text-amber-300">28 Novembre</strong>!
               </p>
             </div>
-            <Link
-              to="/programma"
+          <Link
+              to="/programma?giorno=06/12"
               className="inline-flex items-center gap-1.5 text-sm font-black text-amber-400 hover:text-amber-300"
             >
               Vedi dettagli tappa <ArrowRight className="w-4 h-4" />

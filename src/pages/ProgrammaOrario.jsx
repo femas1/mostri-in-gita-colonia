@@ -1,5 +1,5 @@
 import { useState } from 'react';
-import { Link } from 'react-router-dom';
+import { Link, useSearchParams } from 'react-router-dom';
 import { ChevronLeft, ChevronRight, Clock, MapPin, ExternalLink, Info, Utensils } from 'lucide-react';
 import { linksEscursioni } from '../data/tripData';
 
@@ -251,7 +251,9 @@ const dailySchedule = [
 ];
 
 export default function ProgrammaOrario() {
-  const [selectedDayIdx, setSelectedDayIdx] = useState(0);
+const [searchParams] = useSearchParams();
+  const initialIdx = dailySchedule.findIndex((d) => d.date === searchParams.get('giorno'));
+  const [selectedDayIdx, setSelectedDayIdx] = useState(initialIdx !== -1 ? initialIdx : 0);
   const currentDay = dailySchedule[selectedDayIdx];
 
   const renderEventLink = (linkObj) => {
