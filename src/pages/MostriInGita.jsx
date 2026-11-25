@@ -7,6 +7,7 @@ import {
   ChevronRight,
   Shuffle,
 } from "lucide-react";
+import MeteoColonia from '../components/MeteoColonia';
 
 const curiosities = [
   {
@@ -213,7 +214,10 @@ export default function MostriInGita() {
                 </div>
               ))}
             </div>
+            
           </div>
+
+          <MeteoColonia dark/>
 
           {/* Pulsanti di navigazione diretti */}
           {/* <div className="flex flex-wrap justify-center gap-4">

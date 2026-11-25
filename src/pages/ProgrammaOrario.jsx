@@ -2,6 +2,7 @@ import { useState } from 'react';
 import { Link, useSearchParams } from 'react-router-dom';
 import { ChevronLeft, ChevronRight, Clock, MapPin, ExternalLink, Info, Utensils } from 'lucide-react';
 import { linksEscursioni } from '../data/tripData';
+import MeteoColonia from '../components/MeteoColonia';
 
 const dailySchedule = [
   {
@@ -280,6 +281,7 @@ const [searchParams] = useSearchParams();
       </div>
 
       {/* Selettore Giorni (Tabs) */}
+      <MeteoColonia light/>
       <div className="day-tabs">
         {dailySchedule.map((day, idx) => (
           <button
