@@ -206,6 +206,7 @@ export default function MenuMoselstuebchen() {
           href="https://wa.me/4915251539299?text=Ciao!%20Ecco%20la%20mia%20scelta%20per%20Moselst%C3%BCbchen%3A%20"
           target="_blank"
           rel="noreferrer"
+          className="whatsapp-shake-btn"
           style={{
             backgroundColor: '#25D366',
             color: '#ffffff',
@@ -385,6 +386,7 @@ export default function MenuMoselstuebchen() {
         <a
           href="https://wa.me/4915251539299?text=Ciao!%20Ecco%20la%20mia%20scelta%20per%20Moselst%C3%BCbchen%3A%20"
           target="_blank"
+          className="whatsapp-shake-btn"
           rel="noreferrer"
           style={{
             backgroundColor: '#25D366',

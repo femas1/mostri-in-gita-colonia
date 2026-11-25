@@ -545,3 +545,36 @@ tr:nth-child(even) td {
 .urgent-card:hover {
   animation-play-state: paused;
 }
+
+@keyframes whatsappShake {
+  0%, 76%, 100% {
+    transform: translateX(0) rotate(0deg) scale(1);
+    box-shadow: 0 4px 12px rgba(37, 211, 102, 0.25);
+  }
+  79% {
+    transform: translateX(-4px) rotate(-2deg) scale(1.03);
+    box-shadow: 0 6px 20px rgba(37, 211, 102, 0.55);
+  }
+  82% {
+    transform: translateX(4px) rotate(2deg) scale(1.03);
+  }
+  85% {
+    transform: translateX(-3px) rotate(-1.5deg) scale(1.02);
+  }
+  88% {
+    transform: translateX(3px) rotate(1.5deg) scale(1.02);
+  }
+  91% {
+    transform: translateX(0) rotate(0deg) scale(1);
+  }
+}
+
+.whatsapp-shake-btn {
+  animation: whatsappShake 3.5s ease-in-out infinite;
+  transition: background-color 0.15s ease;
+}
+
+.whatsapp-shake-btn:hover {
+  animation-play-state: paused;
+  background-color: #1ebe5d !important;
+}

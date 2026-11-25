@@ -1,4 +1,5 @@
 import { BrowserRouter, Routes, Route, Navigate } from 'react-router-dom';
+import ScrollToTop from './components/ScrollToTop';
 import Navbar from './components/Navbar';
 import MostriInGita from './pages/MostriInGita';
 import ProgrammaOrario from './pages/ProgrammaOrario';
@@ -17,6 +18,7 @@ function PageWithNavbar({ children }) {
 export default function App() {
   return (
     <BrowserRouter>
+      <ScrollToTop />
       <Routes>
         <Route path="/" element={<MostriInGita />} />
 
