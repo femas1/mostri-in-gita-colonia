@@ -156,8 +156,8 @@ const dailySchedule = [
         cat: 'sera',
         badge: '☕ Relax',
         title: 'Caffè a casa',
-        location: 'Casa Colonia',
-        details: '⚠️ SI ENTRA SENZA SCARPE! ⚠️',
+        location: 'Casa Kalk',
+        details: '⚠️ SI ENTRA SENZA SCARPE! ⚠️ Attenti al gatto tigrato 😾',
       },
       {
         time: '20:00',
