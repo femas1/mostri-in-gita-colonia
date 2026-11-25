@@ -1,5 +1,6 @@
 import { useState } from 'react';
-import { ChevronLeft, ChevronRight, Clock, MapPin, ExternalLink, Info } from 'lucide-react';
+import { Link } from 'react-router-dom';
+import { ChevronLeft, ChevronRight, Clock, MapPin, ExternalLink, Info, Utensils } from 'lucide-react';
 import { linksEscursioni } from '../data/tripData';
 
 const dailySchedule = [
@@ -89,7 +90,7 @@ const dailySchedule = [
         badge: '🍷 Prenotato',
         title: 'Cena da Moselstübchen',
         location: 'Altstadt / Centro',
-        details: 'Prenotazione confermata (acconto di 160€ già versato). ⚠️ Scegliere il menu entro il 02/12.',
+        details: 'Prenotazione confermata (acconto di 160€ già versato). ⚠️ Scegliere il menu entro il 28/11.',
         link: {
           label: 'Apri Menu Moselstübchen',
           url: '/menu-moselstuebchen',
@@ -236,15 +237,6 @@ const dailySchedule = [
     subtitle: 'Partenze',
     summary: '',
     events: [
-      // {
-      //   time: '09:30 - 12:30',
-      //   duration: 'Mattina',
-      //   cat: 'libero',
-      //   badge: '🧭 Libero',
-      //   title: 'Ultima mattinata a Colonia',
-      //   location: 'Colonia',
-      //   details: 'Colazione e preparazione bagagli per Gigia e Mangus.',
-      // },
       {
         time: '14:45',
         duration: '',
@@ -261,6 +253,22 @@ const dailySchedule = [
 export default function ProgrammaOrario() {
   const [selectedDayIdx, setSelectedDayIdx] = useState(0);
   const currentDay = dailySchedule[selectedDayIdx];
+
+  const renderEventLink = (linkObj) => {
+    if (!linkObj) return null;
+    if (linkObj.url.startsWith('/')) {
+      return (
+        <Link to={linkObj.url} className="btn-link">
+          <Utensils size={14} /> {linkObj.label}
+        </Link>
+      );
+    }
+    return (
+      <a href={linkObj.url} target="_blank" rel="noreferrer" className="btn-link">
+        {linkObj.label} <ExternalLink size={14} />
+      </a>
+    );
+  };
 
   return (
     <div>
@@ -336,16 +344,8 @@ export default function ProgrammaOrario() {
 
               {(ev.link || ev.secondLink) && (
                 <div className="timeline-links">
-                  {ev.link && (
-                    <a href={ev.link.url} target="_blank" rel="noreferrer" className="btn-link">
-                      {ev.link.label} <ExternalLink size={14} />
-                    </a>
-                  )}
-                  {ev.secondLink && (
-                    <a href={ev.secondLink.url} target="_blank" rel="noreferrer" className="btn-link">
-                      {ev.secondLink.label} <ExternalLink size={14} />
-                    </a>
-                  )}
+                  {renderEventLink(ev.link)}
+                  {renderEventLink(ev.secondLink)}
                 </div>
               )}
             </div>
@@ -360,9 +360,7 @@ export default function ProgrammaOrario() {
         </h3>
         <div style={{ display: 'flex', flexWrap: 'wrap', gap: '1.25rem' }}>
           {linksEscursioni.map((link) => (
-            <a key={link.url} href={link.url} target="_blank" rel="noreferrer" className="btn-link">
-              {link.label} <ExternalLink size={15} />
-            </a>
+            <span key={link.url}>{renderEventLink(link)}</span>
           ))}
         </div>
       </div>
