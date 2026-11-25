@@ -91,7 +91,7 @@ export default function MeteoColonia({ dark = false }) {
         padding: '1rem 1.25rem',
         borderRadius: '16px',
         marginTop: '1.25rem',
-        marginBottom: '1.5rem',
+        marginBottom: '0.25rem',
       }}
     >
       {/* Intestazione */}
