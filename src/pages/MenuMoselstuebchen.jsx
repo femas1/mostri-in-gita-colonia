@@ -175,7 +175,7 @@ export default function MenuMoselstuebchen() {
           <AlertTriangle size={18} /> Scadenza scelta piatti: entro il 28 Novembre
         </div>
         <div style={{ fontSize: '0.9rem', color: '#78350f', marginTop: '0.25rem' }}>
-          Prenotazione confermata per il <strong>5/12 alle 19:30</strong> • Quasi tutti i piatti classici sono disponibili anche in versione <strong>vegana</strong> senza sovrapprezzo.
+          Prenotazione confermata per il <strong>5/12 alle 19:30</strong> • Quasi tutti i piatti classici sono disponibili anche in versione <strong>vegana</strong>.
         </div>
       </div>
       {/* Box Conferma Scelta via WhatsApp */}
