@@ -157,7 +157,7 @@ const dailySchedule = [
         badge: '☕ Relax',
         title: 'Caffè a casa',
         location: 'Casa Kalk',
-        details: '⚠️ SI ENTRA SENZA SCARPE! ⚠️ Attenti al gatto tigrato 😾',
+        details: '😾⚠️ SI ENTRA SENZA SCARPE! ⚠️😾',
       },
       {
         time: '20:00',
