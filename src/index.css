@@ -578,3 +578,29 @@ tr:nth-child(even) td {
   animation-play-state: paused;
   background-color: #1ebe5d !important;
 }
+
+@keyframes snowFall {
+  0% {
+    transform: translateY(-20px) translateX(0);
+    opacity: 0;
+  }
+  20% {
+    opacity: 0.45;
+  }
+  80% {
+    opacity: 0.45;
+  }
+  100% {
+    transform: translateY(420px) translateX(18px);
+    opacity: 0;
+  }
+}
+
+.snowflake {
+  position: absolute;
+  top: -10px;
+  color: #ffffff;
+  pointer-events: none;
+  user-select: none;
+  animation: snowFall linear infinite;
+}

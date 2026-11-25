@@ -72,5 +72,5 @@ export const restaurants = [
 export const linksEscursioni = [
   { label: 'Biglietti Castello Drachenburg (10€)', url: 'https://schloss-drachenburg.shop.koronaevent.de/de/admissions/AD1/price' },
   { label: 'Biglietti Cremagliera Drachenfelsbahn (12€)', url: 'https://www.drachenfelsbahn.de/tickets#!/o/ee332234b069c14c3ce1af073c847ba5/cw/f861741971a5b0b28910635c64ca34bb' },
-  { label: 'Menu Moselstübchen (scegliere entro 02/12)', url: '/menu-moselstuebchen' },
+  { label: 'Menu Moselstübchen (scegliere entro 28/11)', url: '/menu-moselstuebchen' },
 ];

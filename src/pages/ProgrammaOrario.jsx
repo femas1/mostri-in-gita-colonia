@@ -63,7 +63,7 @@ const dailySchedule = [
         title: 'Mercatini di Natale & Duomo di Colonia',
         location: 'Centro Storico / Kölner Dom',
         details:
-          'Ingresso Duomo: 12€. Optional: a) Museo dei Tesori 8€ (30-60 min); b) Torre 533 gradini 8€ (30-45 min); c) Combo a+b = 12€.',
+          'Ingresso Duomo: 12€. Opzionali: \na) Museo dei Tesori (30-60 min): 8€; \nb) Torre 533 gradini (30-45 min): 8€; \nc) Combo a+b = 12€.',
       },
       {
         time: '13:00 - 15:00',
@@ -139,7 +139,7 @@ const dailySchedule = [
         title: 'Castello di Drachenburg',
         location: 'Königswinter (Drachenfels)',
         details:
-          'Ingresso: 10€/persona (bambini gratis).\nSalita dalla stazione al castello:\n• Opz. A: ~35 min a piedi nel bosco/collina (gratis)\n• Opz. B: Ferrovia a cremagliera panoramica (12€/persona, bambini gratis)',
+          'Ingresso: 10€/persona (bambini gratis). Per la salita al castello ci sono due opzioni:\n \n- Avventura 🤠: circa 35 min a piedi nel bosco/collina (gratis)\n- Comoda💲: Ferrovia a cremagliera panoramica (12€/persona, bambini gratis)',
         link: {
           label: 'Biglietti Castello (10€)',
           url: 'https://schloss-drachenburg.shop.koronaevent.de/en/admissions/AD1/price',

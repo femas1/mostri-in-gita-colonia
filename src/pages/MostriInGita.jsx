@@ -171,6 +171,13 @@ export default function MostriInGita() {
           SEZIONE 1: HERO & COUNTDOWN
          ========================================================= */}
       <section className="relative overflow-hidden border-b border-slate-800/80 bg-gradient-to-b from-emerald-950/60 via-slate-950 to-slate-950 px-6 py-20 text-center">
+      <div aria-hidden="true" className="pointer-events-none">
+          <span className="snowflake text-sm" style={{ left: "10%", animationDuration: "9s", animationDelay: "0s" }}>❄</span>
+          <span className="snowflake text-xs" style={{ left: "26%", animationDuration: "12s", animationDelay: "2s" }}>•</span>
+          <span className="snowflake text-base" style={{ left: "48%", animationDuration: "10s", animationDelay: "4s" }}>❄</span>
+          <span className="snowflake text-xs" style={{ left: "72%", animationDuration: "11s", animationDelay: "1s" }}>•</span>
+          <span className="snowflake text-sm" style={{ left: "88%", animationDuration: "9.5s", animationDelay: "3s" }}>❄</span>
+        </div>
         <div className="max-w-4xl mx-auto">
           <div className="inline-flex items-center gap-2 px-4 py-1.5 rounded-full bg-amber-400/10 border border-amber-400/30 text-amber-300 text-xs font-bold uppercase tracking-widest mb-6">
             🇩🇪 Colonia • 04 - 08 Dicembre 2026 🇩🇪
