@@ -102,6 +102,64 @@ const curiosities = [
   },
 ];
 
+const quizQuestions = [
+  {
+    question: "Come fai capire al cameriere (Köbes) che non vuoi più birra Kölsch?",
+    options: [
+      "Alzi la mano e dici 'Danke'",
+      "Appoggi il sottobicchiere sopra il bicchiere vuoto",
+      "Capovolgi il bicchiere sul tavolo",
+    ],
+    answerIdx: 1,
+    explanation:
+      "Finché non metti il sottobicchiere (Bierdeckel) sopra la Stange da 0,2 l, il Köbes continuerà a portartene una fresca senza chiedere!",
+  },
+  {
+    question: "Quanto sono alte le due torri del Duomo di Colonia?",
+    options: [
+      "Esattamente identiche (157 m ciascuna)",
+      "La torre nord supera la sud di 4 centimetri",
+      "La torre sud è più alta di 3 metri",
+    ],
+    answerIdx: 1,
+    explanation:
+      "Sembrano gemelle, ma la torre nord misura 157,38 m mentre la sud è alta 157,34 m: esattamente 4 cm di differenza.",
+  },
+  {
+    question: "Cosa significa la scritta 'Hausordnung' a casa a Kalk?",
+    options: [
+      "Si entra rigorosamente senza scarpe",
+      "Bisogna portare una Kölsch al gatto",
+      "Coprifuoco alle 22:00",
+    ],
+    answerIdx: 0,
+    explanation:
+      "Regola d'oro della casa a Kalk: si entra senza scarpe (e occhio al gatto tigrato!).",
+  },
+  {
+    question: "Quanti gradini bisogna salire per arrivare in cima alla torre del Duomo?",
+    options: [
+      "312 gradini",
+      "533 gradini",
+      "780 gradini",
+    ],
+    answerIdx: 1,
+    explanation:
+      "533 gradini a chiocciola per arrivare a circa 100 metri d'altezza con vista panoramica sul Reno.",
+  },
+  {
+    question: "Chi ha scelto il celebre verde ('Kölner Grün') dei ponti di Colonia?",
+    options: [
+      "Konrad Adenauer quando era sindaco di Colonia",
+      "Napoleone Bonaparte nel 1804",
+      "L'architetto del Duomo",
+    ],
+    answerIdx: 0,
+    explanation:
+      "Konrad Adenauer lo scelse da sindaco (1917–1933), ben prima di diventare Cancelliere della Germania Ovest.",
+  },
+];
+
 export default function MostriInGita() {
   const [timeLeft, setTimeLeft] = useState({
     days: 0,
@@ -111,6 +169,36 @@ export default function MostriInGita() {
   });
   const [curiosityCat, setCuriosityCat] = useState("Tutte");
   const [curiosityIdx, setCuriosityIdx] = useState(0);
+  const [quizIdx, setQuizIdx] = useState(0);
+  const [selectedOption, setSelectedOption] = useState(null);
+  const [quizScore, setQuizScore] = useState(0);
+  const [quizFinished, setQuizFinished] = useState(false);
+
+  const currentQuestion = quizQuestions[quizIdx];
+
+  const handleQuizAnswer = (optIdx) => {
+    if (selectedOption !== null) return;
+    setSelectedOption(optIdx);
+    if (optIdx === currentQuestion.answerIdx) {
+      setQuizScore((prev) => prev + 1);
+    }
+  };
+
+  const handleNextQuestion = () => {
+    if (quizIdx + 1 < quizQuestions.length) {
+      setQuizIdx((prev) => prev + 1);
+      setSelectedOption(null);
+    } else {
+      setQuizFinished(true);
+    }
+  };
+
+  const resetQuiz = () => {
+    setQuizIdx(0);
+    setSelectedOption(null);
+    setQuizScore(0);
+    setQuizFinished(false);
+  };
 
   useEffect(() => {
     const target = new Date("2026-12-04T09:35:00").getTime();
@@ -218,17 +306,6 @@ export default function MostriInGita() {
           </div>
 
           <MeteoColonia dark/>
-
-          {/* Pulsanti di navigazione diretti */}
-          {/* <div className="flex flex-wrap justify-center gap-4">
-            <Link
-              to="/programma"
-              className="inline-flex items-center gap-2 bg-amber-400 hover:bg-amber-300 text-slate-950 font-black px-6 py-3.5 rounded-xl transition-transform hover:scale-105 shadow-lg shadow-amber-400/20"
-            >
-              <Calendar className="w-5 h-5" />
-              Vedi programma
-            </Link>
-          </div> */}
         </div>
       </section>
 
@@ -360,13 +437,20 @@ export default function MostriInGita() {
             </Link>
           </div>
         </div>
-        <div className="mt-10 text-center">
+       <div className="mt-10 flex flex-wrap justify-center items-center gap-4">
           <Link
             to="/programma"
             className="inline-flex items-center gap-2 bg-amber-400 hover:bg-amber-300 text-slate-950 font-black px-7 py-3.5 rounded-xl transition-transform hover:scale-105 shadow-lg shadow-amber-400/20"
           >
             <Calendar className="w-5 h-5" />
             Vedi programma completo
+          </Link>
+
+          <Link
+            to="/guida"
+            className="inline-flex items-center gap-2 bg-emerald-950/80 hover:bg-emerald-900 border border-emerald-600/50 text-emerald-200 font-bold px-6 py-3.5 rounded-xl transition-all hover:scale-105"
+          >
+            📖 Guida &amp; Cultura Locale
           </Link>
         </div>
       </section>
@@ -453,6 +537,116 @@ export default function MostriInGita() {
         </div>
       </section>
 
+      {/* =========================================================
+          SEZIONE 5: QUIZ DEI MOSTRI SU COLONIA
+         ========================================================= */}
+      <section className="max-w-3xl mx-auto px-6 py-16">
+        <div className="text-center mb-8">
+          <div className="text-xs font-bold uppercase tracking-widest text-emerald-400 mb-2">
+            Sfida pre-partenza
+          </div>
+          <h2 className="text-3xl sm:text-4xl font-black text-white">
+            Quanto ne sai su Colonia? 🧠
+          </h2>
+        </div>
+
+        <div className="bg-slate-900/90 border border-slate-800 rounded-3xl p-6 sm:p-9 shadow-2xl">
+          {!quizFinished ? (
+            <>
+              <div className="flex items-center justify-between text-xs font-bold text-slate-400 mb-4">
+                <span>
+                  Domanda {quizIdx + 1} di {quizQuestions.length}
+                </span>
+                <span className="text-amber-400">Punteggio: {quizScore}</span>
+              </div>
+
+              <h3 className="text-lg sm:text-xl font-black text-white mb-6">
+                {currentQuestion.question}
+              </h3>
+
+              <div className="space-y-3">
+                {currentQuestion.options.map((opt, idx) => {
+                  const isAnswered = selectedOption !== null;
+                  const isCorrect = idx === currentQuestion.answerIdx;
+                  const isSelected = idx === selectedOption;
+
+                  let btnStyle =
+                    "bg-slate-950/80 border-slate-800 text-slate-200 hover:border-amber-400/50";
+                  if (isAnswered) {
+                    if (isCorrect) {
+                      btnStyle =
+                        "bg-emerald-950/80 border-emerald-400 text-emerald-200";
+                    } else if (isSelected) {
+                      btnStyle = "bg-red-950/80 border-red-500 text-red-200";
+                    } else {
+                      btnStyle =
+                        "bg-slate-950/40 border-slate-800/50 text-slate-500";
+                    }
+                  }
+
+                  return (
+                    <button
+                      key={idx}
+                      onClick={() => handleQuizAnswer(idx)}
+                      disabled={isAnswered}
+                      className={`w-full text-left px-5 py-3.5 rounded-2xl border font-semibold text-sm sm:text-base transition-all cursor-pointer ${btnStyle}`}
+                    >
+                      {opt}
+                    </button>
+                  );
+                })}
+              </div>
+
+              {selectedOption !== null && (
+                <div className="mt-6 p-4 rounded-2xl bg-slate-950 border border-slate-800 text-sm text-slate-300 leading-relaxed">
+                  <strong className="text-amber-400 block mb-1">
+                    {selectedOption === currentQuestion.answerIdx
+                      ? "✅ Esatto!"
+                      : "❌ Risposta sbagliata!"}
+                  </strong>
+                  {currentQuestion.explanation}
+
+                  <div className="mt-4 text-right">
+                    <button
+                      onClick={handleNextQuestion}
+                      className="inline-flex items-center gap-1.5 bg-amber-400 hover:bg-amber-300 text-slate-950 font-black text-xs px-5 py-2.5 rounded-xl cursor-pointer transition-colors"
+                    >
+                      {quizIdx + 1 < quizQuestions.length
+                        ? "Prossima domanda"
+                        : "Vedi risultato"}{" "}
+                      <ArrowRight className="w-4 h-4" />
+                    </button>
+                  </div>
+                </div>
+              )}
+            </>
+          ) : (
+            <div className="text-center py-4">
+              <div className="text-5xl mb-4">
+                {quizScore >= 4 ? "🏆" : quizScore >= 2 ? "🍺" : "👾"}
+              </div>
+              <h3 className="text-2xl font-black text-white mb-2">
+                Hai totalizzato {quizScore} su {quizQuestions.length}!
+              </h3>
+              <p className="text-slate-300 text-sm sm:text-base mb-6">
+                {quizScore >= 4
+                  ? "Mostro esperto! Sei pronto a fare da guida ufficiale a Colonia."
+                  : quizScore >= 2
+                  ? "Buon risultato! Ripassa un po' nella sezione Guida & Cultura prima del volo."
+                  : "Serve un ripasso urgente davanti a una Kölsch fresca!"}
+              </p>
+              <button
+                onClick={resetQuiz}
+                className="inline-flex items-center gap-2 bg-amber-400 hover:bg-amber-300 text-slate-950 font-black text-sm px-6 py-3 rounded-xl cursor-pointer transition-colors"
+              >
+                Rigioca il quiz
+              </button>
+            </div>
+          )}
+        </div>
+      </section>
+
+      {/* Footer minimal */}
       {/* Footer minimal */}
       <footer className="border-t border-slate-800/80 py-8 px-6 text-center text-xs text-slate-500">
         <div className="flex flex-wrap justify-center gap-5 mb-3 text-slate-400 font-medium">
@@ -461,6 +655,9 @@ export default function MostriInGita() {
           </Link>
           <Link to="/trasporti" className="hover:text-amber-400">
             Trasporti
+          </Link>
+          <Link to="/guida" className="hover:text-amber-400">
+            Guida &amp; Cultura
           </Link>
         </div>
         <p>Mostri in Gita a Colonia 04-08 Dicembre 2026</p>

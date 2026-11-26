@@ -1,10 +1,11 @@
-import { BrowserRouter, Routes, Route, Navigate } from 'react-router-dom';
-import ScrollToTop from './components/ScrollToTop';
-import Navbar from './components/Navbar';
-import MostriInGita from './pages/MostriInGita';
-import ProgrammaOrario from './pages/ProgrammaOrario';
-import Trasporti from './pages/Trasporti';
-import MenuMoselstuebchen from './pages/MenuMoselstuebchen';
+import { BrowserRouter, Routes, Route, Navigate } from "react-router-dom";
+import ScrollToTop from "./components/ScrollToTop";
+import Navbar from "./components/Navbar";
+import MostriInGita from "./pages/MostriInGita";
+import ProgrammaOrario from "./pages/ProgrammaOrario";
+import Trasporti from "./pages/Trasporti";
+import GuidaColonia from "./pages/GuidaColonia";
+import MenuMoselstuebchen from "./pages/MenuMoselstuebchen";
 
 function PageWithNavbar({ children }) {
   return (
@@ -30,7 +31,7 @@ export default function App() {
             </PageWithNavbar>
           }
         />
-       
+
         <Route
           path="/trasporti"
           element={
@@ -44,6 +45,14 @@ export default function App() {
           element={
             <PageWithNavbar>
               <MenuMoselstuebchen />
+            </PageWithNavbar>
+          }
+        />
+        <Route
+          path="/guida"
+          element={
+            <PageWithNavbar>
+              <GuidaColonia />
             </PageWithNavbar>
           }
         />

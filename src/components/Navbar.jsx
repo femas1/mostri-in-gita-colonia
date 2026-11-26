@@ -1,5 +1,5 @@
 import { NavLink } from 'react-router-dom';
-import { Calendar, Train, Sparkles } from 'lucide-react';
+import { Calendar, Compass, Train, House } from 'lucide-react';
 
 export default function Navbar() {
   return (
@@ -10,10 +10,13 @@ export default function Navbar() {
 
       <nav className="nav-links">
         <NavLink to="/" end className={({ isActive }) => `nav-link ${isActive ? 'active' : ''}`}>
-          <Sparkles size={16} /> Home
+          <House size={16} /> Home
         </NavLink>
         <NavLink to="/programma" className={({ isActive }) => `nav-link ${isActive ? 'active' : ''}`}>
           <Calendar size={16} /> Programma
+        </NavLink>
+        <NavLink to="/guida" className={({ isActive }) => `nav-link ${isActive ? 'active' : ''}`}>
+        <Compass size={16}/>  Scopri Colonia
         </NavLink>
         <NavLink to="/trasporti" className={({ isActive }) => `nav-link ${isActive ? 'active' : ''}`}>
           <Train size={16} /> Trasporti
