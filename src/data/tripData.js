@@ -31,7 +31,7 @@ export const budgetItems = [
 export const transports = [
   {
     name: 'KVB 24h Gruppo',
-    coverage: '24 ore - Rete urbana Colonia (incl. aeroporto di Colonia e Castello di Drachenburg)',
+    coverage: '24 ore - Rete urbana Colonia (incl. aeroporto di Colonia)',
     totalPrice: 19.20,
     people: 5,
     children: 'Gratis',
@@ -70,7 +70,6 @@ export const restaurants = [
 ];
 
 export const linksEscursioni = [
-  { label: 'Biglietti Castello Drachenburg (10€)', url: 'https://schloss-drachenburg.shop.koronaevent.de/de/admissions/AD1/price' },
-  { label: 'Biglietti Cremagliera Drachenfelsbahn (12€)', url: 'https://www.drachenfelsbahn.de/tickets#!/o/ee332234b069c14c3ce1af073c847ba5/cw/f861741971a5b0b28910635c64ca34bb' },
+  { label: 'Biglietti Castello Satzvey (12€)', url: 'https://tickets.burgsatzvey.de/checkout/693953d207d571c2a6592b32' },
   { label: 'Menu Moselstübchen (scegliere entro 28/11)', url: '/menu-moselstuebchen' },
 ];

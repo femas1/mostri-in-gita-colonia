@@ -98,7 +98,7 @@ const dailySchedule = [
         },
       },
       {
-        time: '22:00',
+        time: '22:0git a0',
         duration: 'Dopocena',
         cat: 'sera',
         badge: '🍸 Serata',
@@ -111,11 +111,11 @@ const dailySchedule = [
   {
     date: '06/12',
     dayName: 'Domenica',
-    subtitle: 'Brunch, Castello di Drachenburg & birrificio storico Sünner',
+    subtitle: 'Brunch, Castello di Satzvey & birrificio storico Sünner',
     summary: '',
     events: [
       {
-        time: '09:30 - 11:00',
+        time: '09:30 - 10:30',
         duration: '1h 30m',
         cat: 'pasto',
         badge: '🥞 Prenotato',
@@ -124,32 +124,28 @@ const dailySchedule = [
         details: 'Brunch a buffet',
       },
       {
-        time: '11:00 - 12:00',
-        duration: 'Trasferimento',
-        cat: 'arrivo',
-        badge: '🚆 Treno + Bus',
-        title: 'Spostamento verso Königswinter',
-        location: 'Köln Hbf/Deutz → (Troisdorf) → Königswinter Bf',
-        details: 'Tratta: treni S19/RE9 + Bus RE8 fino a Königswinter Bahnhof.',
+      time: '10:30 - 12:00',
+      duration: 'Trasferimento',
+      cat: 'arrivo',
+      badge: '🚆 Treno',
+      title: 'Spostamento verso Satzvey',
+      location: 'Köln Hbf / Messe-Deutz → Satzvey Bf',
+      details: 'Treno regionale diretto (RE22 / RB24 direzione Euskirchen/Trier) fino alla stazione di Satzvey, poi circa 5-10 minuti a piedi fino al castello.',
+    },
+    {
+      time: '12:00 - 15:00',
+      duration: '5 ore',
+      cat: 'visita',
+      badge: '🏰 Escursione',
+      title: 'Burg Satzvey (Castello sull’acqua e mercatino medievale natalizio)',
+      location: 'Mechernich-Satzvey',
+      details:
+        'Uno dei castelli sull’acqua (Wasserburg) meglio conservati della Renania, con cortili medievali e mercatino natalizio storico.',
+      link: {
+        label: 'Biglietti Burg Satzvey (12€)',
+        url: 'https://tickets.burgsatzvey.de/checkout/693953d207d571c2a6592b32',
       },
-      {
-        time: '12:00 - 17:00',
-        duration: '5 ore',
-        cat: 'visita',
-        badge: '🏰 Escursione',
-        title: 'Castello di Drachenburg',
-        location: 'Königswinter (Drachenfels)',
-        details:
-          'Ingresso: 10€/persona (bambini gratis). Per la salita al castello ci sono due opzioni:\n \n- Avventura 🤠: circa 35 min a piedi nel bosco/collina (gratis)\n- Comoda💲: Ferrovia a cremagliera panoramica (12€/persona, bambini gratis)',
-        link: {
-          label: 'Biglietti Castello (10€)',
-          url: 'https://schloss-drachenburg.shop.koronaevent.de/en/admissions/AD1/price',
-        },
-        secondLink: {
-          label: 'Biglietti Cremagliera (12€)',
-          url: 'https://www.drachenfelsbahn.de/en/tickets',
-        },
-      },
+    },
       {
         time: '17:30 - 19:30',
         duration: 'Pomeriggio',

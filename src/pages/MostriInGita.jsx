@@ -7,7 +7,7 @@ import {
   ChevronRight,
   Shuffle,
 } from "lucide-react";
-import MeteoColonia from '../components/MeteoColonia';
+import MeteoColonia from "../components/MeteoColonia";
 
 const curiosities = [
   {
@@ -172,12 +172,57 @@ export default function MostriInGita() {
           SEZIONE 1: HERO & COUNTDOWN
          ========================================================= */}
       <section className="relative overflow-hidden border-b border-slate-800/80 bg-gradient-to-b from-emerald-950/60 via-slate-950 to-slate-950 px-6 py-20 text-center">
-      <div aria-hidden="true" className="pointer-events-none">
-          <span className="snowflake text-sm" style={{ left: "10%", animationDuration: "9s", animationDelay: "0s" }}>❄</span>
-          <span className="snowflake text-xs" style={{ left: "26%", animationDuration: "12s", animationDelay: "2s" }}>•</span>
-          <span className="snowflake text-base" style={{ left: "48%", animationDuration: "10s", animationDelay: "4s" }}>❄</span>
-          <span className="snowflake text-xs" style={{ left: "72%", animationDuration: "11s", animationDelay: "1s" }}>•</span>
-          <span className="snowflake text-sm" style={{ left: "88%", animationDuration: "9.5s", animationDelay: "3s" }}>❄</span>
+        <div aria-hidden="true" className="pointer-events-none">
+          <span
+            className="snowflake text-sm"
+            style={{
+              left: "10%",
+              animationDuration: "9s",
+              animationDelay: "0s",
+            }}
+          >
+            ❄
+          </span>
+          <span
+            className="snowflake text-xs"
+            style={{
+              left: "26%",
+              animationDuration: "12s",
+              animationDelay: "2s",
+            }}
+          >
+            •
+          </span>
+          <span
+            className="snowflake text-base"
+            style={{
+              left: "48%",
+              animationDuration: "10s",
+              animationDelay: "4s",
+            }}
+          >
+            ❄
+          </span>
+          <span
+            className="snowflake text-xs"
+            style={{
+              left: "72%",
+              animationDuration: "11s",
+              animationDelay: "1s",
+            }}
+          >
+            •
+          </span>
+          <span
+            className="snowflake text-sm"
+            style={{
+              left: "88%",
+              animationDuration: "9.5s",
+              animationDelay: "3s",
+            }}
+          >
+            ❄
+          </span>
         </div>
         <div className="max-w-4xl mx-auto">
           <div className="inline-flex items-center gap-2 px-4 py-1.5 rounded-full bg-amber-400/10 border border-amber-400/30 text-amber-300 text-xs font-bold uppercase tracking-widest mb-6">
@@ -214,10 +259,9 @@ export default function MostriInGita() {
                 </div>
               ))}
             </div>
-            
           </div>
 
-          <MeteoColonia dark/>
+          <MeteoColonia dark />
 
           {/* Pulsanti di navigazione diretti */}
           {/* <div className="flex flex-wrap justify-center gap-4">
@@ -284,18 +328,16 @@ export default function MostriInGita() {
                   <span className="w-2 h-2 rounded-full bg-red-500 animate-ping" />
                   ⚠️ Scadenza 28/11
                 </span>
-                <span className="text-2xl font-black text-red-500/40">
-                  01
-                </span>
+                <span className="text-2xl font-black text-red-500/40">01</span>
               </div>
               <h3 className="text-xl font-bold text-white mb-2">
-                Entro il 28 Novembre
+                Scegli un piatto
               </h3>
               <p className="text-sm text-slate-200 leading-relaxed mb-5">
                 Il ristorante{" "}
-                <strong className="text-red-300">Moselstübchen</strong>{" "}
-                richiede un pre-ordine: scegli dal menù un piatto principale
-                (eventuali antipasti e bevande si ordinano al ristorante).
+                <strong className="text-red-300">Moselstübchen</strong> richiede
+                un pre-ordine: scegli dal menù un piatto principale (eventuali
+                antipasti e bevande si ordinano al ristorante).
               </p>
             </div>
             <Link
@@ -307,27 +349,27 @@ export default function MostriInGita() {
           </div>
 
           {/* COMPITO 02: SFIDA DRACHENBURG (Scadenza 28/11) */}
-          <div className="urgent-card relative bg-gradient-to-br from-amber-950/40 via-slate-900/95 to-slate-900 border-2 border-amber-400/70 rounded-2xl p-6 flex flex-col justify-between">
+          {/* COMPITO 02: ESCURSIONE BURG SATZVEY */}
+          <div className="urgent-card-red relative bg-gradient-to-br from-red-950/40 via-slate-900/95 to-slate-900 border-2 border-red-500/80 rounded-2xl p-6 flex flex-col justify-between">
             <div>
               <div className="flex items-center justify-between mb-4">
                 <span className="inline-flex items-center gap-2 px-3 py-1 rounded-full text-xs font-bold bg-amber-400/20 text-amber-300 border border-amber-400/50">
-                  <span className="w-2 h-2 rounded-full bg-amber-400 animate-ping" />
-                  ⚠️ Scadenza 28/11
+                  🏰 Scadenza 28/11
                 </span>
                 <span className="text-2xl font-black text-amber-400/40">
                   02
                 </span>
               </div>
               <h3 className="text-xl font-bold text-white mb-2">
-                Castello di Drachenburg
+                Comprare i biglietti
               </h3>
               <p className="text-sm text-slate-200 leading-relaxed mb-5">
-                35 min di salita nel bosco o cremagliera panoramica (12€)?
-                Decidi entro il{" "}
-                <strong className="text-amber-300">28 Novembre</strong>!
+                Per il castello sull’acqua di{" "}
+                <strong className="text-amber-300">Burg Satzvey</strong> con
+                mercatino natalizio medievale sono disponibili pochi biglietti.
               </p>
             </div>
-          <Link
+            <Link
               to="/programma?giorno=06/12"
               className="inline-flex items-center gap-1.5 text-sm font-black text-amber-400 hover:text-amber-300"
             >
