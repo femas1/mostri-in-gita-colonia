@@ -98,11 +98,11 @@ const dailySchedule = [
         },
       },
       {
-        time: '22:30',
+        time: '22:00',
         duration: 'Dopocena',
         cat: 'sera',
         badge: '🍸 Serata',
-        title: 'Red Fox Bar',
+        title: 'Müllers Kneipe',
         location: 'Quartiere Ehrenfeld',
         details: 'Serata nel quartiere alternativo di Colonia.',
       },
