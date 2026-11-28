@@ -2,12 +2,12 @@ import { useState, useEffect } from "react";
 import { Link } from "react-router-dom";
 import {
   Calendar,
-  ArrowRight,
   ChevronLeft,
   ChevronRight,
   Shuffle,
 } from "lucide-react";
 import MeteoColonia from "../components/MeteoColonia";
+import WhatsNewModal from "../components/WhatsNewModal";
 
 const curiosities = [
   {
@@ -168,6 +168,7 @@ export default function MostriInGita() {
 
   return (
     <div className="min-h-screen bg-slate-950 text-slate-100 selection:bg-amber-400 selection:text-slate-950">
+      <WhatsNewModal />
       {/* =========================================================
           SEZIONE 1: HERO & COUNTDOWN
          ========================================================= */}
@@ -304,11 +305,22 @@ export default function MostriInGita() {
             </div>
           ))}
         </div>
+
+        <div className="mt-10 text-center">
+          <Link
+            to="/programma"
+            className="inline-flex items-center gap-2 bg-amber-400 hover:bg-amber-300 text-slate-950 font-black px-7 py-3.5 rounded-xl transition-transform hover:scale-105 shadow-lg shadow-amber-400/20"
+          >
+            <Calendar className="w-5 h-5" />
+            Vedi programma completo
+          </Link>
+        </div>
       </section>
 
       {/* =========================================================
-          SEZIONE 3: LE 3 REGOLE D'ORO DEI MOSTRI
+          SEZIONE 3: LE 3 REGOLE D'ORO DEI MOSTRI (COMMENTATA)
          ========================================================= */}
+      {/*
       <section className="max-w-5xl mx-auto px-6 py-16 border-b border-slate-800/80">
         <div className="text-center mb-10">
           <div className="text-xs font-bold uppercase tracking-widest text-emerald-400 mb-2">
@@ -320,7 +332,6 @@ export default function MostriInGita() {
         </div>
 
         <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
-          {/* COMPITO 01: MENU MOSELSTÜBCHEN (Scadenza 28/11 - Bordo Rosso) */}
           <div className="urgent-card-red relative bg-gradient-to-br from-red-950/40 via-slate-900/95 to-slate-900 border-2 border-red-500/80 rounded-2xl p-6 flex flex-col justify-between">
             <div>
               <div className="flex items-center justify-between mb-4">
@@ -348,8 +359,6 @@ export default function MostriInGita() {
             </Link>
           </div>
 
-          {/* COMPITO 02: SFIDA DRACHENBURG (Scadenza 28/11) */}
-          {/* COMPITO 02: ESCURSIONE BURG SATZVEY */}
           <div className="urgent-card-red relative bg-gradient-to-br from-red-950/40 via-slate-900/95 to-slate-900 border-2 border-red-500/80 rounded-2xl p-6 flex flex-col justify-between">
             <div>
               <div className="flex items-center justify-between mb-4">
@@ -377,7 +386,6 @@ export default function MostriInGita() {
             </Link>
           </div>
 
-          {/* COMPITO 03: TRASPORTI FURBI */}
           <div className="bg-slate-900/80 border border-slate-800 rounded-2xl p-6 flex flex-col justify-between">
             <div>
               <div className="flex items-center justify-between mb-4">
@@ -412,6 +420,7 @@ export default function MostriInGita() {
           </Link>
         </div>
       </section>
+      */}
 
       {/* =========================================================
           SEZIONE 4: CURIOSITÀ & SEGRETI DI COLONIA (CAROSELLO)

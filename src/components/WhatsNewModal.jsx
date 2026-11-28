@@ -7,7 +7,7 @@ import { Sparkles, X, ArrowRight } from "lucide-react";
 // =========================================================================
 const LATEST_UPDATE = {
   version: "v2-burg-satzvey", // Cambia questa stringa per far riapparire il popup a tutti
-  badge: "Novità mostruose",
+  badge: "Novità mostruose  ",
   title: "Cambio di programma! 🏰",
   items: [
     "Nuova tappa Domenica 06/12: al posto di Drachenburg (sold-out) andiamo al castello sull’acqua di Burg Satzvey per il mercatino natalizio medievale!",

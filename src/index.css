@@ -588,7 +588,7 @@ tr:nth-child(even) td {
     opacity: 0.45;
   }
   80% {
-    opacity: 0.45;
+    opacity: 0.5;
   }
   100% {
     transform: translateY(420px) translateX(18px);
